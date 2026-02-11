@@ -1,0 +1,11 @@
+book_filename: "bookdown-demo"
+
+language:
+  ui:
+    chapter_name: "Chapter "
+
+delete_merged_file: true
+rmd_files:
+ - index.Rmd
+ - ejercicio-2.Rmd
+ - ejercicio-3.Rmd

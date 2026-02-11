@@ -1,0 +1,34 @@
+"0","title: ""Ejercicios Corte 1""
+author: ""Tiffany Mendoza S.""
+date: ""`r Sys.Date()`""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: ""Ejercicios R.""
+---
+
+# Ejercicio 1
+
+A partir del dataset df, el cual trata de los incendios forestales, realice las siguientes tareas:
+
+- Filtrar los registros para incluir únicamente los incendios ocurridos en el estado de Idaho.
+
+- Seleccionar únicamente las columnas YEAR_, CAUSE y TOTALACRES.
+
+- Renombrar estas columnas con nombres más claros y descriptivos.
+
+- Agrupar la información por CAUSE y YEAR_.
+
+- Resumir el total de acres quemados para cada combinación de causa y año.
+
+- Elaborar una visualización que muestre los resultados de manera clara.
+
+
+## Cargue de base de incendios forestales {.unnumbered}
+"
+"2","/bin/sh: ---: command not found
+"

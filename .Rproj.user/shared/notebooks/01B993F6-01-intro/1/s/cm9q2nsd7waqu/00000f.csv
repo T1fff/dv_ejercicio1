@@ -1,0 +1,7 @@
+"0","df %>%"
+"0","  filter(Year == 2016, !is.na(Medal)) %>%"
+"0","  count(Sport, name = ""medal_count"") %>%"
+"0","  arrange(desc(medal_count)) %>%"
+"0","  slice_head(n = 5) -> top5"
+"0",""
+"0","kable(top5, caption = ""Numero de medallas por deporte en 2016"")"

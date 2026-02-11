@@ -1,0 +1,4 @@
+"0","library(tidyverse)"
+"0","library(kableExtra)"
+"0","library(ggplot2)"
+"0","df <- read_csv('/Users/pctm/Library/Mobile Documents/com~apple~CloudDocs/RDataSets/StudyArea.csv')"

@@ -1,0 +1,4 @@
+"0","top5_sports <- c(""Athletics"", ""Swimming"", ""Rowing"", ""Football"", ""Hockey"")"
+"0","df_filtrado <- df %>%"
+"0","  filter(Year == 2016, Sport %in% top5_sports, !is.na(Medal)) %>%"
+"0","  select(Sport, Name, Age, Sex, Team, Medal, Weight)"

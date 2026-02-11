@@ -1,4 +1,7 @@
 tab:unnamed-chunk-4
+tab:unnamed-chunk-9
+tab:unnamed-chunk-11
+tab:unnamed-chunk-12
 ejercicio-1
 ejercicio-2
 ejercicio-3

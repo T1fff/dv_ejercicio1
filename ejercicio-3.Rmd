@@ -1,0 +1,3 @@
+# Ejercicio 3
+
+Considere el conjunto de datos us_state_population.tsv ubicado en la carpeta de datos de Python de github. Repita el procedimiento planteado en cada ítem de esta sección para obtener el nuevo dataframe con las nuevas columnas Year y Population. Realice unión y separación utilizando las columnas State y Code.

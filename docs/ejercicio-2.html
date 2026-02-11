@@ -1,113 +1,63 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Ejercicio 2 | Ejercicios Corte 1</title>
-  <meta name="description" content="Ejercicios R." />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Chapter 2 Ejercicio 2 | Ejercicios Corte 1" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="Ejercicios R." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Ejercicio 2 | Ejercicios Corte 1" />
-  
-  <meta name="twitter:description" content="Ejercicios R." />
-  
-
-<meta name="author" content="Tiffany Mendoza S." />
-
-
-<meta name="date" content="2026-02-10" />
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="index.html"/>
-<link rel="next" href="ejercicio-3.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-
-
-
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Ejercicio 2 | Ejercicios Corte 1</title>
+<meta name="author" content="Tiffany Mendoza S.">
+<meta name="description" content="Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en Randi-Griffin y puesto a disposición en athlete_events. Su tarea consiste en identificar los...">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Ejercicio 2 | Ejercicios Corte 1">
+<meta property="og:type" content="book">
+<meta property="og:description" content="Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en Randi-Griffin y puesto a disposición en athlete_events. Su tarea consiste en identificar los...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Ejercicio 2 | Ejercicios Corte 1">
+<meta name="twitter:description" content="Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en Randi-Griffin y puesto a disposición en athlete_events. Su tarea consiste en identificar los...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.10.0/transition.js"></script><script src="libs/bs3compat-0.10.0/tabs.js"></script><script src="libs/bs3compat-0.10.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet">
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">Ejercicios</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ejercicio 1</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#cargue-de-base-de-incendios-forestales"><i class="fa fa-check"></i>Cargue de base de incendios forestales</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#desarrollo"><i class="fa fa-check"></i>Desarrollo</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agrupar-la-informacion-por-cause-y-year."><i class="fa fa-check"></i>Agrupar la informacion por cause y year.</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="ejercicio-2.html"><a href="ejercicio-2.html"><i class="fa fa-check"></i><b>2</b> Ejercicio 2</a></li>
-<li class="chapter" data-level="3" data-path="ejercicio-3.html"><a href="ejercicio-3.html"><i class="fa fa-check"></i><b>3</b> Ejercicio 3</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Ejercicios Corte 1</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ejercicios Corte 1</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Ejercicio 1</a></li>
+<li><a class="active" href="ejercicio-2.html"><span class="header-section-number">2</span> Ejercicio 2</a></li>
+<li><a class="" href="ejercicio-3.html"><span class="header-section-number">3</span> Ejercicio 3</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="ejercicio-2" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Ejercicio 2<a href="ejercicio-2.html#ejercicio-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="ejercicio-2" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Ejercicio 2<a class="anchor" aria-label="anchor" href="#ejercicio-2"><i class="fas fa-link"></i></a>
+</h1>
 <p>Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en Randi-Griffin y puesto a disposición en athlete_events.
 Su tarea consiste en identificar los cinco deportes más importantes según el mayor número de medallas otorgadas en el año 2016, y luego realizar el siguiente análisis:</p>
 <ul>
@@ -116,68 +66,301 @@ Su tarea consiste en identificar los cinco deportes más importantes según el m
 <li>Identifique qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</li>
 <li>Presente un resumen de la tendencia del peso de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016.</li>
 </ul>
+<div id="eventos-deportivos" class="section level2 unnumbered">
+<h2>Eventos deportivos<a class="anchor" aria-label="anchor" href="#eventos-deportivos"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">'/Users/pctm/Desktop/Universidad/Sem 6/athlete_events.csv'</span><span class="op">)</span></span></code></pre></div>
+<div id="número-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016" class="section level3 unnumbered">
+<h3>Número de medallas concedidas en cada uno de los cinco principales deportes en 2016<a class="anchor" aria-label="anchor" href="#n%C3%BAmero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">==</span> <span class="fl">2016</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Medal</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">Sport</span>, name <span class="op">=</span> <span class="st">"medal_count"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">medal_count</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">top5</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">top5</span>, caption <span class="op">=</span> <span class="st">"Numero de medallas por deporte en 2016"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-9">Table 2.1: </span>Numero de medallas por deporte en 2016</caption>
+<thead><tr class="header">
+<th align="left">Sport</th>
+<th align="right">medal_count</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Athletics</td>
+<td align="right">192</td>
+</tr>
+<tr class="even">
+<td align="left">Swimming</td>
+<td align="right">191</td>
+</tr>
+<tr class="odd">
+<td align="left">Rowing</td>
+<td align="right">144</td>
+</tr>
+<tr class="even">
+<td align="left">Football</td>
+<td align="right">106</td>
+</tr>
+<tr class="odd">
+<td align="left">Hockey</td>
+<td align="right">99</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">top5_sports</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Athletics"</span>, <span class="st">"Swimming"</span>, <span class="st">"Rowing"</span>, <span class="st">"Football"</span>, <span class="st">"Hockey"</span><span class="op">)</span></span>
+<span><span class="va">df_filtrado</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Year</span> <span class="op">==</span> <span class="fl">2016</span>, <span class="va">Sport</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">top5_sports</span>, <span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">Medal</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Sport</span>, <span class="va">Name</span>, <span class="va">Age</span>, <span class="va">Sex</span>, <span class="va">Team</span>, <span class="va">Medal</span>, <span class="va">Weight</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="distribución-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016." class="section level3 unnumbered">
+<h3>Distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.<a class="anchor" aria-label="anchor" href="#distribuci%C3%B3n-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_filtrado</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Sport</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>      n <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>      mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      median_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      IQR_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      min_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      max_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>      .groups <span class="op">=</span> <span class="st">"drop"</span></span>
+<span>    <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">dist_edad</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">dist_edad</span>, caption <span class="op">=</span> <span class="st">"Tabla de distribución de edad"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-11">Table 2.2: </span>Tabla de distribución de edad</caption>
+<colgroup>
+<col width="14%">
+<col width="5%">
+<col width="13%">
+<col width="16%">
+<col width="13%">
+<col width="11%">
+<col width="11%">
+<col width="11%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Sport</th>
+<th align="right">n</th>
+<th align="right">mean_age</th>
+<th align="right">median_age</th>
+<th align="right">sd_age</th>
+<th align="right">IQR_age</th>
+<th align="right">min_age</th>
+<th align="right">max_age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Athletics</td>
+<td align="right">192</td>
+<td align="right">26.41146</td>
+<td align="right">26</td>
+<td align="right">4.131665</td>
+<td align="right">5.25</td>
+<td align="right">19</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">Swimming</td>
+<td align="right">191</td>
+<td align="right">23.23037</td>
+<td align="right">22</td>
+<td align="right">4.013047</td>
+<td align="right">4.00</td>
+<td align="right">16</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="left">Rowing</td>
+<td align="right">144</td>
+<td align="right">28.12500</td>
+<td align="right">28</td>
+<td align="right">3.871855</td>
+<td align="right">6.00</td>
+<td align="right">20</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="left">Football</td>
+<td align="right">106</td>
+<td align="right">24.08491</td>
+<td align="right">23</td>
+<td align="right">4.336156</td>
+<td align="right">6.00</td>
+<td align="right">17</td>
+<td align="right">34</td>
+</tr>
+<tr class="odd">
+<td align="left">Hockey</td>
+<td align="right">99</td>
+<td align="right">26.38384</td>
+<td align="right">27</td>
+<td align="right">4.072574</td>
+<td align="right">5.00</td>
+<td align="right">19</td>
+<td align="right">37</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="equipos-nacionales-ganaron-el-mayor-número-de-medallas-en-los-cinco-principales-deportes-en-2016." class="section level3 unnumbered">
+<h3>Equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.<a class="anchor" aria-label="anchor" href="#equipos-nacionales-ganaron-el-mayor-n%C3%BAmero-de-medallas-en-los-cinco-principales-deportes-en-2016."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_filtrado</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Team</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">Team</span>, name <span class="op">=</span> <span class="st">"medal_count"</span><span class="op">)</span>  <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">medal_count</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span>n<span class="op">=</span><span class="fl">5</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">top5_teams</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">top5_teams</span>, caption <span class="op">=</span> <span class="st">"Top 5 equipos"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>
+<span id="tab:unnamed-chunk-12">Table 2.3: </span>Top 5 equipos</caption>
+<thead><tr class="header">
+<th align="left">Team</th>
+<th align="right">medal_count</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">United States</td>
+<td align="right">127</td>
+</tr>
+<tr class="even">
+<td align="left">Germany</td>
+<td align="right">88</td>
+</tr>
+<tr class="odd">
+<td align="left">Great Britain</td>
+<td align="right">69</td>
+</tr>
+<tr class="even">
+<td align="left">Canada</td>
+<td align="right">45</td>
+</tr>
+<tr class="odd">
+<td align="left">Australia</td>
+<td align="right">43</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="tendencia-del-peso-de-los-atletas-masculinos-y-femeninos-en-los-cinco-principales-deportes-en-2016." class="section level3 unnumbered">
+<h3>Tendencia del peso de los atletas masculinos y femeninos en los cinco principales deportes en 2016.<a class="anchor" aria-label="anchor" href="#tendencia-del-peso-de-los-atletas-masculinos-y-femeninos-en-los-cinco-principales-deportes-en-2016."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_filtrado</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Sex</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span></span>
+<span>    mean_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    median_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    min_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    max_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    IQR_w <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">Weight</span>,na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">tendencia_w</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">tendencia_w</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">Sex</th>
+<th align="right">mean_w</th>
+<th align="right">median_w</th>
+<th align="right">min_w</th>
+<th align="right">max_w</th>
+<th align="right">sd_w</th>
+<th align="right">IQR_w</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">F</td>
+<td align="right">65.24507</td>
+<td align="right">65</td>
+<td align="right">40</td>
+<td align="right">136</td>
+<td align="right">10.04168</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td align="left">M</td>
+<td align="right">81.80914</td>
+<td align="right">80</td>
+<td align="right">47</td>
+<td align="right">134</td>
+<td align="right">12.97826</td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df_filtrado</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Sex</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">Weight</span>, fill <span class="op">=</span> <span class="va">Sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>outlier.shape <span class="op">=</span> <span class="fl">21</span>, alpha <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.12</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">1</span>, color <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">mean</span>, geom <span class="op">=</span> <span class="st">"point"</span>, shape <span class="op">=</span> <span class="fl">23</span>, size <span class="op">=</span> <span class="fl">3</span>, fill <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Distribución del peso por sexo"</span>,</span>
+<span>       x <span class="op">=</span> <span class="st">"Sexo"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"Peso (kg)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure">
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672">
+Para F (mujeres): la mediana está alrededor de 65 kg y la caja (IQR) es relativamente estrecha, lo que indica que la mayoría de las atletas ganadoras se agrupan cerca de ese valor; los bigotes son moderados y aparecen pocos outliers, aunque hay una cola derecha leve con algunos pesos atípicos. Para M (hombres): la mediana se ubica aproximadamente entre 75–80 kg, la caja es más ancha (mayor IQR) señalando mayor dispersión interna, y los bigotes junto con numerosos puntos atípicos muestran una cola derecha más pronunciada —es decir, hay más observaciones con pesos extremos. En ambos grupos se observan valores atípicos que podrían deberse a posiciones/disciplinas específica</div>
 
 </div>
-            </section>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Ejercicio 1</a></div>
+<div class="next"><a href="ejercicio-3.html"><span class="header-section-number">3</span> Ejercicio 3</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ejercicio-2"><span class="header-section-number">2</span> Ejercicio 2</a></li>
+<li>
+<a class="nav-link" href="#eventos-deportivos">Eventos deportivos</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#n%C3%BAmero-de-medallas-concedidas-en-cada-uno-de-los-cinco-principales-deportes-en-2016">Número de medallas concedidas en cada uno de los cinco principales deportes en 2016</a></li>
+<li><a class="nav-link" href="#distribuci%C3%B3n-de-la-edad-de-los-ganadores-de-medallas-en-los-cinco-principales-deportes-en-2016.">Distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</a></li>
+<li><a class="nav-link" href="#equipos-nacionales-ganaron-el-mayor-n%C3%BAmero-de-medallas-en-los-cinco-principales-deportes-en-2016.">Equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</a></li>
+<li><a class="nav-link" href="#tendencia-del-peso-de-los-atletas-masculinos-y-femeninos-en-los-cinco-principales-deportes-en-2016.">Tendencia del peso de los atletas masculinos y femeninos en los cinco principales deportes en 2016.</a></li>
+</ul>
+</li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ejercicio-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Ejercicios Corte 1</strong>" was written by Tiffany Mendoza S.. It was last built on 2026-02-11.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-  "sharing": {
-    "github": false,
-    "facebook": true,
-    "twitter": true,
-    "linkedin": false,
-    "weibo": false,
-    "instapaper": false,
-    "vk": false,
-    "whatsapp": false,
-    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-  },
-  "fontsettings": {
-    "theme": "white",
-    "family": "sans",
-    "size": 2
-  },
-  "edit": {
-    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
-    "text": "Edit"
-  },
-  "history": {
-    "link": null,
-    "text": null
-  },
-  "view": {
-    "link": null,
-    "text": null
-  },
-  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
-  "search": {
-    "engine": "fuse",
-    "options": null
-  },
-  "toc": {
-    "collapse": "subsection"
-  }
-});
-});
-</script>
 
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
 </body>
-
 </html>

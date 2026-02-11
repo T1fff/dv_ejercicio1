@@ -1,0 +1,8 @@
+"0","df %>% "
+"0","  filter(STATE == 'Idaho')  %>% "
+"0","  select(STARTYR=YEAR_, NATURE=CAUSE, ACRES=TOTALACRES) %>% "
+"0","  mutate("
+"0","    ACRES = as.numeric(gsub("","", """", as.character(ACRES))), "
+"0","  ) -> df_filtrado"
+"0",""
+"0","head(df_filtrado)"
