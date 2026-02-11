@@ -1,0 +1,485 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Ejercicios Corte 1},
+  pdfauthor={Tiffany Mendoza S.},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Ejercicios Corte 1}
+\author{Tiffany Mendoza S.}
+\date{2026-02-10}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Ejercicio 1}\label{ejercicio-1}
+
+A partir del dataset df, el cual trata de los incendios forestales, realice las siguientes tareas:
+
+\begin{itemize}
+\item
+  Filtrar los registros para incluir únicamente los incendios ocurridos en el estado de Idaho.
+\item
+  Seleccionar únicamente las columnas YEAR\_, CAUSE y TOTALACRES.
+\item
+  Renombrar estas columnas con nombres más claros y descriptivos.
+\item
+  Agrupar la información por CAUSE y YEAR\_.
+\item
+  Resumir el total de acres quemados para cada combinación de causa y año.
+\item
+  Elaborar una visualización que muestre los resultados de manera clara.
+\end{itemize}
+
+\section*{Cargue de base de incendios forestales}\label{cargue-de-base-de-incendios-forestales}
+\addcontentsline{toc}{section}{Cargue de base de incendios forestales}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(kableExtra)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}/Users/pctm/Library/Mobile Documents/com\textasciitilde{}apple\textasciitilde{}CloudDocs/RDataSets/StudyArea.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section*{Desarrollo}\label{desarrollo}
+\addcontentsline{toc}{section}{Desarrollo}
+
+\subsubsection*{Filtrar los registros para incluir únicamente los incendios ocurridos en el estado de Idaho. Seleccionar y renombrar únicamente las columnas YEAR\_, CAUSE y TOTALACRES.}\label{filtrar-los-registros-para-incluir-uxfanicamente-los-incendios-ocurridos-en-el-estado-de-idaho.-seleccionar-y-renombrar-uxfanicamente-las-columnas-year_-cause-y-totalacres.}
+\addcontentsline{toc}{subsubsection}{Filtrar los registros para incluir únicamente los incendios ocurridos en el estado de Idaho. Seleccionar y renombrar únicamente las columnas YEAR\_, CAUSE y TOTALACRES.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(STATE }\SpecialCharTok{==} \StringTok{\textquotesingle{}Idaho\textquotesingle{}}\NormalTok{)  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\AttributeTok{STARTYR=}\NormalTok{YEAR\_, }\AttributeTok{NATURE=}\NormalTok{CAUSE, }\AttributeTok{ACRES=}\NormalTok{TOTALACRES) }\OtherTok{{-}\textgreater{}}\NormalTok{ df\_filtrado}
+
+\FunctionTok{head}\NormalTok{(df\_filtrado)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 3
+##   STARTYR NATURE  ACRES
+##     <dbl> <chr>   <dbl>
+## 1    1987 Human       5
+## 2    1991 Natural   150
+## 3    1991 Human     800
+## 4    1990 Natural     2
+## 5    1985 Human      38
+## 6    1988 Human       2
+\end{verbatim}
+
+\subsection*{Agrupar la informacion por cause y year.}\label{agrupar-la-informacion-por-cause-y-year.}
+\addcontentsline{toc}{subsection}{Agrupar la informacion por cause y year.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_filtrado }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(NATURE, STARTYR) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{median\_acres =} \FunctionTok{mean}\NormalTok{(ACRES),}
+            \AttributeTok{ds\_acres =} \FunctionTok{sd}\NormalTok{(ACRES),}
+            \AttributeTok{mediana\_acres =} \FunctionTok{median}\NormalTok{(ACRES),}
+            \AttributeTok{RIC\_acres =} \FunctionTok{IQR}\NormalTok{(ACRES),}
+            \AttributeTok{min\_acres =} \FunctionTok{min}\NormalTok{(ACRES),}
+            \AttributeTok{max\_acres =} \FunctionTok{max}\NormalTok{(ACRES),}
+            \AttributeTok{q1\_acres =} \FunctionTok{quantile}\NormalTok{(ACRES)[}\DecValTok{2}\NormalTok{],}
+            \AttributeTok{q3\_acres =} \FunctionTok{quantile}\NormalTok{(ACRES)[}\DecValTok{4}\NormalTok{],}
+            \AttributeTok{total\_acres =} \FunctionTok{sum}\NormalTok{(ACRES)}
+            
+\NormalTok{            )}\OtherTok{{-}\textgreater{}}\NormalTok{ showdf}
+
+\FunctionTok{kable}\NormalTok{(showdf, }\AttributeTok{caption =} \StringTok{"Agrupación por causa y año"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{column\_spec}\NormalTok{(}\DecValTok{2}\NormalTok{, }\AttributeTok{width =} \StringTok{"20em"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{scroll\_box}\NormalTok{(}\AttributeTok{width =} \StringTok{"100\%"}\NormalTok{, }\AttributeTok{height =} \StringTok{"550px"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-4}Agrupación por causa y año}
+\centering
+\begin{tabular}[t]{l|>{\raggedleft\arraybackslash}p{20em}|r|r|r|r|r|r|r|r|r}
+\hline
+NATURE & STARTYR & median\_acres & ds\_acres & mediana\_acres & RIC\_acres & min\_acres & max\_acres & q1\_acres & q3\_acres & total\_acres\\
+\hline
+Human & 1980 & 517.803597 & 1.694831e+03 & 6.00 & 179.000 & 0.00 & 15560.0 & 1.00 & 180.000 & 71974.70\\
+\hline
+Human & 1981 & 933.457021 & 3.825587e+03 & 15.00 & 349.000 & 0.00 & 37730.0 & 1.00 & 350.000 & 219362.40\\
+\hline
+Human & 1982 & 250.119118 & 6.722048e+02 & 7.50 & 105.250 & 0.00 & 4745.0 & 1.00 & 106.250 & 34016.20\\
+\hline
+Human & 1983 & 339.735915 & 1.253732e+03 & 10.50 & 121.000 & 0.00 & 10500.0 & 2.00 & 123.000 & 48242.50\\
+\hline
+Human & 1984 & 265.020144 & 7.082504e+02 & 10.00 & 150.000 & 0.00 & 5520.0 & 1.00 & 151.000 & 36837.80\\
+\hline
+Human & 1985 & 407.397006 & 1.693777e+03 & 5.00 & 87.350 & 0.00 & 18585.0 & 0.15 & 87.500 & 68035.30\\
+\hline
+Human & 1986 & 118.955647 & 5.148097e+02 & 0.30 & 5.900 & 0.00 & 5002.0 & 0.10 & 6.000 & 43180.90\\
+\hline
+Human & 1987 & 93.178780 & 4.347462e+02 & 0.20 & 4.900 & 0.00 & 5300.0 & 0.10 & 5.000 & 35128.40\\
+\hline
+Human & 1988 & 2383.539118 & 2.774656e+04 & 0.50 & 9.900 & 0.00 & 427680.0 & 0.10 & 10.000 & 810403.30\\
+\hline
+Human & 1989 & 69.705473 & 5.974787e+02 & 0.10 & 0.900 & 0.00 & 11000.0 & 0.10 & 1.000 & 28021.60\\
+\hline
+Human & 1990 & 383.117472 & 4.414106e+03 & 0.20 & 3.900 & 0.00 & 71731.0 & 0.10 & 4.000 & 103058.60\\
+\hline
+Human & 1991 & 64.117042 & 3.265620e+02 & 0.10 & 1.900 & 0.00 & 2955.0 & 0.10 & 2.000 & 19940.40\\
+\hline
+Human & 1992 & 546.999486 & 9.005925e+03 & 0.10 & 1.900 & 0.00 & 177544.0 & 0.10 & 2.000 & 212782.80\\
+\hline
+Human & 1993 & 15.759004 & 1.760988e+02 & 0.10 & 0.100 & 0.00 & 2806.0 & 0.10 & 0.200 & 4113.10\\
+\hline
+Human & 1994 & 202.060391 & 2.569693e+03 & 0.10 & 0.700 & 0.00 & 84677.0 & 0.10 & 0.800 & 299453.50\\
+\hline
+Human & 1995 & 344.379412 & 1.736445e+03 & 3.00 & 99.150 & 0.00 & 20500.0 & 0.10 & 99.250 & 58544.50\\
+\hline
+Human & 1996 & 432.732964 & 2.337182e+03 & 1.00 & 49.900 & 0.00 & 25315.0 & 0.10 & 50.000 & 156216.60\\
+\hline
+Human & 1997 & 56.452976 & 1.954490e+02 & 1.00 & 29.900 & 0.00 & 1478.0 & 0.10 & 30.000 & 9484.10\\
+\hline
+Human & 1998 & 140.686829 & 9.511555e+02 & 0.20 & 2.900 & 0.00 & 9918.0 & 0.10 & 3.000 & 28840.80\\
+\hline
+Human & 1999 & 145.764691 & 9.246913e+02 & 0.80 & 14.900 & 0.10 & 16266.3 & 0.10 & 15.000 & 59034.70\\
+\hline
+Human & 2000 & 304.265734 & 2.047859e+03 & 0.45 & 19.900 & 0.10 & 31316.0 & 0.10 & 20.000 & 87020.00\\
+\hline
+Human & 2001 & 111.183656 & 6.343607e+02 & 0.50 & 5.900 & 0.10 & 8904.0 & 0.10 & 6.000 & 40137.30\\
+\hline
+Human & 2002 & 27.298084 & 1.586931e+02 & 0.20 & 1.900 & 0.10 & 2120.0 & 0.10 & 2.000 & 7124.80\\
+\hline
+Human & 2003 & 297.619109 & 1.791910e+03 & 0.50 & 4.900 & 0.10 & 25007.0 & 0.10 & 5.000 & 90178.59\\
+\hline
+Human & 2004 & 25.623855 & 1.027188e+02 & 0.20 & 2.775 & 0.01 & 817.0 & 0.10 & 2.875 & 4253.56\\
+\hline
+Human & 2005 & 521.418211 & 3.291711e+03 & 0.70 & 9.900 & 0.00 & 40483.0 & 0.10 & 10.000 & 163203.90\\
+\hline
+Human & 2006 & 533.620596 & 4.188152e+03 & 1.00 & 19.900 & 0.01 & 61929.1 & 0.10 & 20.000 & 161153.42\\
+\hline
+Human & 2007 & 350.372889 & 2.628756e+03 & 1.00 & 11.900 & 0.01 & 45862.0 & 0.10 & 12.000 & 141901.02\\
+\hline
+Human & 2008 & 110.406074 & 6.708337e+02 & 0.10 & 0.900 & 0.01 & 7831.0 & 0.10 & 1.000 & 35992.38\\
+\hline
+Human & 2009 & 32.274474 & 2.292115e+02 & 0.10 & 0.900 & 0.01 & 3026.0 & 0.10 & 1.000 & 8585.01\\
+\hline
+Human & 2010 & 370.867795 & 5.504310e+03 & 0.20 & 1.400 & 0.00 & 108832.9 & 0.10 & 1.500 & 147976.25\\
+\hline
+Human & 2011 & 63.656599 & 7.767369e+02 & 0.30 & 1.900 & 0.01 & 15775.0 & 0.10 & 2.000 & 28263.53\\
+\hline
+Human & 2012 & 725.719412 & 8.608011e+03 & 2.00 & 36.900 & 0.10 & 146832.0 & 0.10 & 37.000 & 234407.37\\
+\hline
+Human & 2013 & 162.263402 & 1.463046e+03 & 0.40 & 3.800 & 0.01 & 23406.0 & 0.10 & 3.900 & 47218.65\\
+\hline
+Human & 2014 & 34.166866 & 3.258851e+02 & 0.20 & 0.900 & 0.00 & 5011.0 & 0.10 & 1.000 & 11445.90\\
+\hline
+Human & 2015 & 141.618155 & 9.176076e+02 & 0.25 & 2.900 & 0.01 & 10845.0 & 0.10 & 3.000 & 32997.03\\
+\hline
+Human & 2016 & 841.810517 & 1.236872e+04 & 0.10 & 0.400 & 0.01 & 188404.0 & 0.10 & 0.500 & 195300.04\\
+\hline
+Natural & 1980 & 523.636585 & 1.715754e+03 & 0.55 & 46.150 & 0.00 & 8950.0 & 0.10 & 46.250 & 42938.20\\
+\hline
+Natural & 1981 & 1947.840141 & 7.226118e+03 & 5.00 & 562.150 & 0.00 & 74030.0 & 0.10 & 562.250 & 276593.30\\
+\hline
+Natural & 1982 & 409.290291 & 1.652043e+03 & 1.00 & 79.900 & 0.00 & 14690.0 & 0.10 & 80.000 & 42156.90\\
+\hline
+Natural & 1983 & 1423.292308 & 3.983337e+03 & 25.00 & 492.750 & 0.00 & 27360.0 & 3.25 & 496.000 & 185028.00\\
+\hline
+Natural & 1984 & 1065.236719 & 4.133776e+03 & 2.00 & 52.400 & 0.00 & 25840.0 & 0.10 & 52.500 & 136350.30\\
+\hline
+Natural & 1985 & 1337.591139 & 3.898585e+03 & 3.00 & 610.900 & 0.00 & 28883.0 & 0.10 & 611.000 & 211339.40\\
+\hline
+Natural & 1986 & 416.578816 & 3.031769e+03 & 0.20 & 1.900 & 0.00 & 54117.0 & 0.10 & 2.000 & 401165.40\\
+\hline
+Natural & 1987 & 298.436397 & 2.879928e+03 & 0.10 & 0.900 & 0.00 & 58152.0 & 0.10 & 1.000 & 240241.30\\
+\hline
+Natural & 1988 & 926.488095 & 1.487055e+04 & 0.20 & 1.250 & 0.00 & 400100.0 & 0.10 & 1.350 & 700425.00\\
+\hline
+Natural & 1989 & 130.236686 & 1.169256e+03 & 0.20 & 0.900 & 0.00 & 35562.0 & 0.10 & 1.000 & 183894.20\\
+\hline
+Natural & 1990 & 37.968415 & 4.095728e+02 & 0.10 & 0.500 & 0.00 & 10670.0 & 0.10 & 0.600 & 33298.30\\
+\hline
+Natural & 1991 & 84.077487 & 5.903141e+02 & 0.10 & 0.400 & 0.00 & 8487.0 & 0.10 & 0.500 & 83657.10\\
+\hline
+Natural & 1992 & 456.596849 & 5.625640e+03 & 0.10 & 0.600 & 0.00 & 149250.0 & 0.10 & 0.700 & 550655.80\\
+\hline
+Natural & 1993 & 4.603684 & 3.832958e+01 & 0.10 & 0.000 & 0.00 & 388.0 & 0.10 & 0.100 & 874.70\\
+\hline
+Natural & 1994 & 561.488397 & 6.941919e+03 & 0.10 & 0.700 & 0.00 & 146400.0 & 0.10 & 0.800 & 469404.30\\
+\hline
+Natural & 1995 & 226.479911 & 2.528969e+03 & 0.10 & 0.200 & 0.00 & 64193.0 & 0.10 & 0.300 & 202926.00\\
+\hline
+Natural & 1996 & 619.248672 & 8.214360e+03 & 0.10 & 0.900 & 0.00 & 206202.6 & 0.10 & 1.000 & 722663.20\\
+\hline
+Natural & 1997 & 28.388770 & 1.857458e+02 & 0.20 & 0.900 & 0.00 & 2400.0 & 0.10 & 1.000 & 21234.80\\
+\hline
+Natural & 1998 & 86.414995 & 6.367987e+02 & 0.10 & 0.400 & 0.00 & 12606.5 & 0.10 & 0.500 & 93933.10\\
+\hline
+Natural & 1999 & 364.480815 & 4.836924e+03 & 0.10 & 0.400 & 0.00 & 132208.0 & 0.10 & 0.500 & 340060.60\\
+\hline
+Natural & 2000 & 1306.808853 & 9.546501e+03 & 0.20 & 2.900 & 0.10 & 172135.0 & 0.10 & 3.000 & 1298968.00\\
+\hline
+Natural & 2001 & 136.696978 & 1.110011e+03 & 0.10 & 0.900 & 0.00 & 23647.0 & 0.10 & 1.000 & 99515.40\\
+\hline
+Natural & 2002 & 67.104286 & 5.105572e+02 & 0.10 & 0.400 & 0.10 & 8140.0 & 0.10 & 0.500 & 56367.60\\
+\hline
+Natural & 2003 & 268.583805 & 1.932395e+03 & 0.10 & 0.900 & 0.01 & 37842.5 & 0.10 & 1.000 & 225878.98\\
+\hline
+Natural & 2004 & 19.516753 & 1.529284e+02 & 0.10 & 0.150 & 0.01 & 2911.0 & 0.10 & 0.250 & 12080.87\\
+\hline
+Natural & 2005 & 726.635740 & 8.174019e+03 & 0.25 & 5.150 & 0.00 & 192846.1 & 0.10 & 5.250 & 441794.53\\
+\hline
+Natural & 2006 & 703.997565 & 7.584019e+03 & 0.25 & 1.900 & 0.00 & 220042.1 & 0.10 & 2.000 & 728637.48\\
+\hline
+Natural & 2007 & 3156.391578 & 2.536091e+04 & 0.33 & 5.900 & 0.01 & 590620.0 & 0.10 & 6.000 & 2241038.02\\
+\hline
+Natural & 2008 & 202.694256 & 1.996271e+03 & 0.10 & 1.000 & 0.01 & 37725.0 & 0.10 & 1.100 & 77631.90\\
+\hline
+Natural & 2009 & 19.462970 & 1.020285e+02 & 0.10 & 0.400 & 0.00 & 1264.0 & 0.10 & 0.500 & 10354.30\\
+\hline
+Natural & 2010 & 900.163299 & 1.403900e+04 & 0.25 & 1.900 & 0.01 & 306113.0 & 0.10 & 2.000 & 433878.71\\
+\hline
+Natural & 2011 & 560.548755 & 4.059884e+03 & 0.20 & 1.900 & 0.00 & 67061.0 & 0.10 & 2.000 & 306059.62\\
+\hline
+Natural & 2012 & 2785.534728 & 1.896190e+04 & 0.50 & 19.900 & 0.00 & 275960.0 & 0.10 & 20.000 & 1484690.01\\
+\hline
+Natural & 2013 & 753.153707 & 7.694348e+03 & 0.20 & 1.000 & 0.00 & 135231.0 & 0.10 & 1.100 & 652231.11\\
+\hline
+Natural & 2014 & 283.650769 & 3.165187e+03 & 0.20 & 0.700 & 0.00 & 65200.0 & 0.10 & 0.800 & 165935.70\\
+\hline
+Natural & 2015 & 699.750759 & 4.816536e+03 & 0.20 & 1.900 & 0.00 & 95709.0 & 0.10 & 2.000 & 488426.03\\
+\hline
+Natural & 2016 & 596.596857 & 3.537826e+03 & 0.45 & 31.650 & 0.01 & 39813.0 & 0.10 & 31.750 & 83523.56\\
+\hline
+Undetermined & 2007 & 0.300000 & NA & 0.30 & 0.000 & 0.30 & 0.3 & 0.30 & 0.300 & 0.30\\
+\hline
+Undetermined & 2008 & 0.500000 & NA & 0.50 & 0.000 & 0.50 & 0.5 & 0.50 & 0.500 & 0.50\\
+\hline
+Undetermined & 2010 & 1801.000000 & NA & 1801.00 & 0.000 & 1801.00 & 1801.0 & 1801.00 & 1801.000 & 1801.00\\
+\hline
+Undetermined & 2012 & 0.100000 & NA & 0.10 & 0.000 & 0.10 & 0.1 & 0.10 & 0.100 & 0.10\\
+\hline
+Undetermined & 2013 & 0.300000 & 1.414214e-01 & 0.30 & 0.100 & 0.20 & 0.4 & 0.25 & 0.350 & 0.60\\
+\hline
+NA & 1980 & 25.000000 & 2.121320e+01 & 25.00 & 15.000 & 10.00 & 40.0 & 17.50 & 32.500 & 50.00\\
+\hline
+NA & 1981 & 10.750000 & 1.950000e+01 & 1.00 & 9.750 & 1.00 & 40.0 & 1.00 & 10.750 & 43.00\\
+\hline
+NA & 1982 & 1.000000 & 0.000000e+00 & 1.00 & 0.000 & 1.00 & 1.0 & 1.00 & 1.000 & 4.00\\
+\hline
+NA & 1983 & 300.000000 & NA & 300.00 & 0.000 & 300.00 & 300.0 & 300.00 & 300.000 & 300.00\\
+\hline
+NA & 1984 & 10.000000 & NA & 10.00 & 0.000 & 10.00 & 10.0 & 10.00 & 10.000 & 10.00\\
+\hline
+NA & 1985 & 108.250000 & 2.531610e+02 & 25.00 & 22.750 & 1.00 & 734.0 & 8.75 & 31.500 & 866.00\\
+\hline
+NA & 1986 & 80.500000 & 1.124300e+02 & 80.50 & 79.500 & 1.00 & 160.0 & 40.75 & 120.250 & 161.00\\
+\hline
+NA & 1988 & 7.750000 & 8.539126e+00 & 5.00 & 7.750 & 1.00 & 20.0 & 2.50 & 10.250 & 31.00\\
+\hline
+NA & 1989 & 20.000000 & 2.000000e+01 & 20.00 & 20.000 & 0.00 & 40.0 & 10.00 & 30.000 & 60.00\\
+\hline
+NA & 1991 & 0.000000 & NA & 0.00 & 0.000 & 0.00 & 0.0 & 0.00 & 0.000 & 0.00\\
+\hline
+NA & 1993 & 840.000000 & NA & 840.00 & 0.000 & 840.00 & 840.0 & 840.00 & 840.000 & 840.00\\
+\hline
+NA & 1994 & 314.400000 & 5.443836e+02 & 0.10 & 471.450 & 0.10 & 943.0 & 0.10 & 471.550 & 943.20\\
+\hline
+NA & 1995 & 54.525000 & 1.089833e+02 & 0.05 & 54.575 & 0.00 & 218.0 & 0.00 & 54.575 & 218.10\\
+\hline
+NA & 1996 & 3.100000 & 4.242641e+00 & 3.10 & 3.000 & 0.10 & 6.1 & 1.60 & 4.600 & 6.20\\
+\hline
+NA & 1997 & 0.800000 & NA & 0.80 & 0.000 & 0.80 & 0.8 & 0.80 & 0.800 & 0.80\\
+\hline
+NA & 2000 & 29.000000 & NA & 29.00 & 0.000 & 29.00 & 29.0 & 29.00 & 29.000 & 29.00\\
+\hline
+NA & 2002 & 0.100000 & NA & 0.10 & 0.000 & 0.10 & 0.1 & 0.10 & 0.100 & 0.10\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{Gráficos}\label{gruxe1ficos}
+\addcontentsline{toc}{subsubsection}{Gráficos}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(showdf, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{factor}\NormalTok{(STARTYR), }\AttributeTok{y =}\NormalTok{ total\_acres, }\AttributeTok{fill =}\NormalTok{ NATURE)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_col}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x=}\StringTok{"Año"}\NormalTok{, }\AttributeTok{y=}\StringTok{"Total acres"}\NormalTok{, }\AttributeTok{title=}\StringTok{"Total anual por causa"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\NormalTok{comma) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{45}\NormalTok{, }\AttributeTok{hjust=}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+El gráfico de barras muestra que la variación anual en acres quemados es muy alta y está dominada por unos pocos años con incendios extremadamente grandes; en esos picos la mayor parte del área quemada corresponde a causas naturales, mientras que las causas humanas contribuyen de forma constante pero en magnitud mucho menor.
+
+\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Este gráfico muestra, año a año, la distribución del tamaño de incendios (acres por incendio) mediante boxplots: la caja (IQR) marca la dispersión central, la línea roja indica la mediana, los bigotes extienden la variación típica y los puntos/extremos fuera de los bigotes son outliers / mega-fires. Visualmente se aprecia que en la mayoría de los años la mediana es baja (los puntos rojos están cerca de la base), mientras que los bigotes y los outliers alcanzan valores enormes en unos pocos años. Esto indica una distribución con cola larga a la derecha: muchos incendios pequeños y unos pocos incendios extremadamente grandes que empujan la escala.
+
+\chapter{Ejercicio 2}\label{ejercicio-2}
+
+Trabajaremos con el conjunto de datos de 120 años de historia olímpica adquirido por Randi Griffin en Randi-Griffin y puesto a disposición en athlete\_events.
+Su tarea consiste en identificar los cinco deportes más importantes según el mayor número de medallas otorgadas en el año 2016, y luego realizar el siguiente análisis:
+
+\begin{itemize}
+\tightlist
+\item
+  Genere una tabla que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.
+\item
+  Elabore una tabla que muestre la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.
+\item
+  Identifique qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.
+\item
+  Presente un resumen de la tendencia del peso de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016.
+\end{itemize}
+
+\chapter{Ejercicio 3}\label{ejercicio-3}
+
+Here is a review of existing methods.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
