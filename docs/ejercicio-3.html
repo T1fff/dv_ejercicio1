@@ -59,14 +59,116 @@
 <span class="header-section-number">3</span> Ejercicio 3<a class="anchor" aria-label="anchor" href="#ejercicio-3"><i class="fas fa-link"></i></a>
 </h1>
 <p>Considere el conjunto de datos us_state_population.tsv ubicado en la carpeta de datos de Python de github. Repita el procedimiento planteado en cada ítem de esta sección para obtener el nuevo dataframe con las nuevas columnas Year y Population. Realice unión y separación utilizando las columnas State y Code.</p>
+<div id="población-us" class="section level2 unnumbered">
+<h2>Población US<a class="anchor" aria-label="anchor" href="#poblaci%C3%B3n-us"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_tsv</a></span><span class="op">(</span><span class="st">'/Users/pctm/Desktop/Universidad/Sem 6/us_state_population.tsv'</span><span class="op">)</span></span></code></pre></div>
+<div id="recopilación" class="section level3 unnumbered">
+<h3>Recopilación<a class="anchor" aria-label="anchor" href="#recopilaci%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 11
+##   State     Code  `2010` `2011` `2012` `2013` `2014` `2015` `2016` `2017` `2018`
+##   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Alabama   AL    4.79e6 4.80e6 4.82e6 4.83e6 4.84e6 4.85e6 4.86e6 4.88e6 4.89e6
+## 2 Alaska    AK    7.14e5 7.22e5 7.30e5 7.37e5 7.36e5 7.38e5 7.42e5 7.40e5 7.37e5
+## 3 Arizona   AZ    6.41e6 6.47e6 6.56e6 6.63e6 6.73e6 6.83e6 6.95e6 7.05e6 7.17e6
+## 4 Arkansas  AR    2.92e6 2.94e6 2.95e6 2.96e6 2.97e6 2.98e6 2.99e6 3.00e6 3.01e6
+## 5 Californ… CA    3.73e7 3.76e7 3.80e7 3.83e7 3.86e7 3.90e7 3.92e7 3.94e7 3.96e7
+## 6 Colorado  CO    5.05e6 5.12e6 5.19e6 5.27e6 5.35e6 5.45e6 5.54e6 5.62e6 5.70e6</code></pre>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  [1] "State" "Code"  "2010"  "2011"  "2012"  "2013"  "2014"  "2015"  "2016" 
+## [10] "2017"  "2018"</code></pre>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/gather.html">gather</a></span><span class="op">(</span><span class="va">df</span>, <span class="st">'2010'</span><span class="op">:</span><span class="st">'2018'</span>,</span>
+<span>                 key<span class="op">=</span><span class="st">"YEAR"</span>,</span>
+<span>                 value<span class="op">=</span><span class="st">"POPULATION"</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">df_reco</span></span>
+<span></span>
+<span><span class="va">df_reco</span></span></code></pre></div>
+<pre><code>## # A tibble: 459 × 4
+##    State                Code  YEAR  POPULATION
+##    &lt;chr&gt;                &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
+##  1 Alabama              AL    2010     4785448
+##  2 Alaska               AK    2010      713906
+##  3 Arizona              AZ    2010     6407774
+##  4 Arkansas             AR    2010     2921978
+##  5 California           CA    2010    37320903
+##  6 Colorado             CO    2010     5048281
+##  7 Connecticut          CT    2010     3579125
+##  8 Delaware             DE    2010      899595
+##  9 District of Columbia DC    2010      605085
+## 10 Florida              FL    2010    18845785
+## # ℹ 449 more rows</code></pre>
+</div>
+<div id="unión" class="section level3 unnumbered">
+<h3>Unión<a class="anchor" aria-label="anchor" href="#uni%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">df_reco</span>, <span class="va">State_Code</span>, <span class="va">State</span>, <span class="va">Code</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">unite_tb</span></span>
+<span><span class="va">unite_tb</span></span></code></pre></div>
+<pre><code>## # A tibble: 459 × 3
+##    State_Code              YEAR  POPULATION
+##    &lt;chr&gt;                   &lt;chr&gt;      &lt;dbl&gt;
+##  1 Alabama_AL              2010     4785448
+##  2 Alaska_AK               2010      713906
+##  3 Arizona_AZ              2010     6407774
+##  4 Arkansas_AR             2010     2921978
+##  5 California_CA           2010    37320903
+##  6 Colorado_CO             2010     5048281
+##  7 Connecticut_CT          2010     3579125
+##  8 Delaware_DE             2010      899595
+##  9 District of Columbia_DC 2010      605085
+## 10 Florida_FL              2010    18845785
+## # ℹ 449 more rows</code></pre>
+</div>
+<div id="separación" class="section level3 unnumbered">
+<h3>Separación<a class="anchor" aria-label="anchor" href="#separaci%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">unite_tb</span>, <span class="st">"State_Code"</span>, into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"State"</span>, <span class="st">"Code"</span><span class="op">)</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">separate_tb</span></span></code></pre></div>
+<pre><code>## Warning: Expected 2 pieces. Additional pieces discarded in 99 rows [9, 30, 31, 32, 33,
+## 34, 35, 40, 41, 42, 49, 60, 81, 82, 83, 84, 85, 86, 91, 92, ...].</code></pre>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">separate_tb</span></span></code></pre></div>
+<pre><code>## # A tibble: 459 × 4
+##    State       Code  YEAR  POPULATION
+##    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;      &lt;dbl&gt;
+##  1 Alabama     AL    2010     4785448
+##  2 Alaska      AK    2010      713906
+##  3 Arizona     AZ    2010     6407774
+##  4 Arkansas    AR    2010     2921978
+##  5 California  CA    2010    37320903
+##  6 Colorado    CO    2010     5048281
+##  7 Connecticut CT    2010     3579125
+##  8 Delaware    DE    2010      899595
+##  9 District    of    2010      605085
+## 10 Florida     FL    2010    18845785
+## # ℹ 449 more rows</code></pre>
 
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="ejercicio-2.html"><span class="header-section-number">2</span> Ejercicio 2</a></div>
 <div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#ejercicio-3"><span class="header-section-number">3</span> Ejercicio 3</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ejercicio-3"><span class="header-section-number">3</span> Ejercicio 3</a></li>
+<li>
+<a class="nav-link" href="#poblaci%C3%B3n-us">Población US</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#recopilaci%C3%B3n">Recopilación</a></li>
+<li><a class="nav-link" href="#uni%C3%B3n">Unión</a></li>
+<li><a class="nav-link" href="#separaci%C3%B3n">Separación</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
